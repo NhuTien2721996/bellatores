@@ -1,0 +1,177 @@
+.section_main.active .main_title {
+  animation: fadeInDown 1s 0.5s cubic-bezier(0.76, 0.57, 0.2, 0.97) both;
+}
+.section_main.active .subtitle {
+  animation: fadeInUp 1s 1.5s both;
+}
+
+.section_world_view.active .world_slide_thumbs .swiper-slide-thumb-active .world_subtitle {
+  animation: fadeInLeft 1s 0.25s both;
+}
+.section_world_view.active .world_slide_thumbs .swiper-slide-thumb-active .world_title {
+  animation: fadeInLeft 1s 0.5s both;
+}
+.section_world_view.active .world_slide_thumbs .swiper-slide-thumb-active .world_des .text {
+  animation: fadeInUp 1.2s var(--delay) both;
+}
+
+.section_story.active .story_title,
+.section_story.active .story_sub_title {
+  animation: fadeIn 1s var(--delay) forwards;
+}
+.section_story.active .story_slide .swiper-slide {
+  animation: fadeInUp 1s var(--delay) forwards;
+}
+.section_story.active .img_effect {
+  animation: zoomOut 4.5s 0.5s ease forwards;
+}
+.section_story.active .section_banner::after {
+  animation: fadeOut 4s 0.5s ease forwards;
+}
+.section_story.active .map_deco .cloud {
+  opacity: 1;
+}
+.section_story.active .map_deco .cloud:nth-child(1), .section_story.active .map_deco .cloud:nth-child(4), .section_story.active .map_deco .cloud:nth-child(5) {
+  animation: cloudOutDown 4s 0.5s forwards;
+}
+.section_story.active .map_deco .cloud:nth-child(2), .section_story.active .map_deco .cloud:nth-child(3), .section_story.active .map_deco .cloud:nth-child(6) {
+  animation: cloudOutLeft 4s 0.5s forwards;
+}
+.section_story.active .map_deco .cloud:nth-child(7), .section_story.active .map_deco .cloud:nth-child(8) {
+  animation: cloudOut 4s 0.5s forwards;
+}
+.section_story.active .map_deco .cloud:nth-child(9), .section_story.active .map_deco .cloud:nth-child(10) {
+  animation: cloudOutRight 4s 0.5s forwards;
+}
+
+.section_combat.active .combat_slide_thumbs .swiper-slide {
+  animation: fadeInUp 1s var(--delay) backwards;
+}
+.section_combat.active .combat_slide_banner .swiper-slide-thumb-active .img {
+  transform: scale(1);
+}
+
+.combat_slide_banner .swiper-slide-active .img {
+  transform: scale(1);
+}
+
+.section_media.active .media_title, .section_media.active .media_subtitle {
+  animation: fadeInUp 1s var(--delay) both;
+}
+
+.section_house.active .house_slide_thumbs .swiper-slide-thumb-active .house_subtitle {
+  animation: fadeInLeft 1s 0.25s both;
+}
+.section_house.active .house_slide_thumbs .swiper-slide-thumb-active .house_title {
+  animation: fadeInLeft 1s 0.5s both;
+}
+.section_house.active .house_slide_thumbs .swiper-slide-thumb-active .btn_story {
+  animation: fadeInLeft 1s 0.75s both;
+}
+.section_house.active .house_slide_banner .swiper-slide-active .img_character {
+  animation: fadeInRight 1s 1s cubic-bezier(0.5, 0.48, 0.16, 0.96) both;
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes zoomOut {
+  0% {
+    opacity: 0.5;
+    transform: scale3d(2, 2, 2);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale3d(1, 1, 1);
+  }
+}
+@keyframes cloudOutRight {
+  100% {
+    opacity: 0;
+    transform: translateX(25%);
+  }
+}
+@keyframes cloudOutLeft {
+  100% {
+    opacity: 0;
+    transform: translateX(-25%);
+  }
+}
+@keyframes cloudOutDown {
+  100% {
+    opacity: 0;
+    transform: translateY(25%);
+  }
+}
+@keyframes cloudOut {
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes scaleIn {
+  0% {
+    transform: scaleX(0) scaleY(0);
+  }
+  10% {
+    transform: scaleX(1) scaleY(0);
+  }
+  100% {
+    transform: scaleX(1) scaleY(1);
+  }
+}

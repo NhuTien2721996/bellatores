@@ -1,0 +1,55 @@
+@mixin set_position($top,$left){
+    top: $top;
+    left: $left;
+}
+@mixin set_size($w,$h){
+    width: $w;
+    height: $h;
+}
+@mixin size_full{
+    width: 100%;
+    height: 100%;
+}
+@mixin flex_item_center{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+@mixin ab_full{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+@mixin ab_center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+@mixin bg_cover($image){
+    background-image: $image;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+@mixin bg_full($image){
+    background-image: $image;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+@mixin img_full{
+    .img{
+        width: 100%;
+    }
+}
+@mixin c-img($value){
+    display: block;
+    position: relative;
+    padding-top: $value;
+    .img{
+        @include ab_full;
+        object-fit: cover;
+        transition: all .3s;
+    }
+}
