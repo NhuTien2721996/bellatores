@@ -51,23 +51,23 @@
     <ul class="social_list">
       <li class="social_item">
         <a href="#none" title="Youtube" target="_blank" class="social_link">
-          <i class="social_ico sp ytb_ico">
-            <span class="blind">Youtube</span>
-          </i>
+          <i class="social_ico sp ytb_ico above_tablet"></i>
+          <i class="social_ico sp_mo ytb_ico only_mo"></i>
+          <span class="blind">Youtube</span>
         </a>
       </li>
       <li class="social_item">
         <a href="#none" title="Facebook" target="_blank" class="social_link">
-          <i class="social_ico sp fb_ico">
-            <span class="blind">Facebook</span>
-          </i>
+          <i class="social_ico sp fb_ico above_tablet"></i>
+          <i class="social_ico sp_mo fb_ico only_mo"></i>
+          <span class="blind">Facebook</span>
         </a>
       </li>
       <li class="social_item">
         <a href="#none" title="Twitter" target="_blank" class="social_link">
-          <i class="social_ico sp tw_ico">
-            <span class="blind">Twitter</span>
-          </i>
+          <i class="social_ico sp tw_ico above_tablet"></i>
+          <i class="social_ico sp_mo tw_ico only_mo"></i>
+          <span class="blind">Twitter</span>
         </a>
       </li>
     </ul>
@@ -78,15 +78,24 @@
         </i>
       </button>
     </div>
+    <button type="button" class="btn_close_menu only_devices" aria-label="Close">
+      <span class="sp ico_close"></span>
+    </button>
   </header>
+  <button type="button" class="js_toggle_menu pc_hidden" aria-label="Open Menu">
+    <span class="sp ico_bars"></span>
+  </button>
+  <div class="over-lay only_devices"></div>
   <!-- // [D] Header -->
 
   <!-- [D] Content -->
   <div id="fullpage">
     <section class="section section_main" data-anchor="main">
       <div class="section_banner">
-        <video class="video" playsinline muted data-autoplay preload="auto" loop
+        <video class="video above_tablet" playsinline muted data-autoplay preload="auto" loop
           src="https://bellatores.gcdn.ntruss.com/video/kv_pc_001.mp4"></video>
+          <video class="video under_tablet" playsinline muted data-autoplay preload="auto" loop
+          src="https://bellatores.gcdn.ntruss.com/video/kv_mo_001.mp4"></video>
       </div>
       <div class="main_content">
         <h2 class="main_title">
@@ -96,7 +105,7 @@
           <img class="img" src="images/pc_kv_004.png" alt="The Ultimate Medieval Warfare">
         </p>
       </div>
-      <p class="main_des">
+      <p class="main_desc">
         <img class="img" src="images/pc_kv_005.png" alt="Authentic MMORPG for PC Game Enthusiasts">
       </p>
     </section>
@@ -104,19 +113,29 @@
       <div class="section_banner swiper world_slide_banner">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            <img src="images/pc_world_view_001.jpg" alt="" class="img">
+            <img src="images/pc_world_view_001.jpg" alt="" class="img only_pc">
+            <img src="images/ta_world_view_001.jpg" alt="" class="img only_tablet">
+            <img src="images/mo_world_view_001.jpg" alt="" class="img only_mo">
           </div>
           <div class="swiper-slide">
-            <img src="images/pc_world_view_002.jpg" alt="" class="img">
+            <img src="images/pc_world_view_002.jpg" alt="" class="img only_pc">
+            <img src="images/ta_world_view_002.jpg" alt="" class="img only_tablet">
+            <img src="images/mo_world_view_002.jpg" alt="" class="img only_mo">
           </div>
           <div class="swiper-slide">
-            <img src="images/pc_world_view_003.jpg" alt="" class="img">
+            <img src="images/pc_world_view_003.jpg" alt="" class="img only_pc">
+            <img src="images/ta_world_view_003.jpg" alt="" class="img only_tablet">
+            <img src="images/mo_world_view_003.jpg" alt="" class="img only_mo">
           </div>
           <div class="swiper-slide">
-            <img src="images/ta_world_view_004.jpg" alt="" class="img">
+            <img src="images/pc_world_view_004.jpg" alt="" class="img only_pc">
+            <img src="images/ta_world_view_004.jpg" alt="" class="img only_pc">
+            <img src="images/mo_world_view_004.jpg" alt="" class="img only_mo">
           </div>
           <div class="swiper-slide">
-            <img src="images/pc_world_view_005.jpg" alt="" class="img">
+            <img src="images/pc_world_view_005.jpg" alt="" class="img only_pc">
+            <img src="images/ta_world_view_005.jpg" alt="" class="img only_tablet">
+            <img src="images/mo_world_view_005.jpg" alt="" class="img only_mo">
           </div>
         </div>
       </div>
@@ -126,9 +145,12 @@
             <div class="swiper-slide">
               <p class="world_subtitle">World View</p>
               <h2 class="world_title">
-                <img src="images/pc_world_view_006.png" alt="">
+                <img src="images/pc_world_view_006.png" class="only_pc" alt="">
+                <img src="images/ta_world_view_006.png" class="only_tablet" alt="">
+                <img src="images/mo_world_view_006.png" class="only_mo" alt="">
+
               </h2>
-              <p class="world_des">
+              <p class="world_desc">
                 <span class="text" style="--delay:1s">The death of the mad king Heinrich.</span>
                 <br>
                 <span class="text" style="--delay:1.2s">Blinded by the scheme of those obsessed with power,</span>
@@ -139,9 +161,11 @@
             <div class="swiper-slide">
               <p class="world_subtitle">World View</p>
               <h2 class="world_title">
-                <img src="images/pc_world_view_007.png" alt="">
+                <img src="images/pc_world_view_007.png" class="only_pc" alt="">
+                <img src="images/ta_world_view_007.png" class="only_tablet" alt="">
+                <img src="images/mo_world_view_007.png" class="only_mo" alt="">
               </h2>
-              <p class="world_des">
+              <p class="world_desc">
                 <span class="text" style="--delay:1s">Justice has vanished along with the king, and chivalry has
                   crumbled.</span>
                 <br>
@@ -154,9 +178,12 @@
             <div class="swiper-slide">
               <p class="world_subtitle">World View</p>
               <h2 class="world_title">
-                <img src="images/ta_world_view_008.png" alt="">
+                <img src="images/pc_world_view_008.png" class="only_pc" alt="">
+                <img src="images/ta_world_view_008.png" class="only_tablet" alt="">
+                <img src="images/mo_world_view_008.png" class="only_mo" alt="">
+
               </h2>
-              <p class="world_des">
+              <p class="world_desc">
                 <span class="text" style="--delay:1s">Those who laughed amidst all the chaos,</span>
                 <br>
                 <span class="text" style="--delay:1.2s">the followers of disorder that threatened the balance of the
@@ -168,9 +195,12 @@
             <div class="swiper-slide">
               <p class="world_subtitle">World View</p>
               <h2 class="world_title">
-                <img src="images/pc_world_view_009.png" alt="">
+                <img src="images/pc_world_view_009.png" class="only_pc" alt="">
+                <img src="images/ta_world_view_009.png" class="only_tablet" alt="">
+                <img src="images/mo_world_view_009.png" class="only_mo" alt="">
+
               </h2>
-              <p class="world_des">
+              <p class="world_desc">
                 <span class="text" style="--delay:1s">In an era where chaos and order, war and peace intertwined with
                   the desires of
                   each,</span>
@@ -184,9 +214,11 @@
             <div class="swiper-slide">
               <p class="world_subtitle">World View</p>
               <h2 class="world_title">
-                <img src="images/pc_world_view_010.png" alt="">
+                <img src="images/pc_world_view_010.png" class="only_pc" alt="">
+                <img src="images/ta_world_view_010.png" class="only_tablet" alt="">
+                <img src="images/mo_world_view_010.png" class="only_mo" alt="">
               </h2>
-              <p class="world_des">
+              <p class="world_desc">
                 <span class="text" style="--delay:1s">And... You, who charges into this battlefield.</span>
                 <br>
                 <span class="text" style="--delay:1.2s">The story of the future is to be written by you. In this
@@ -198,7 +230,7 @@
             </div>
           </div>
         </div>
-        <div class="swiper_button_box">
+        <!-- <div class="swiper_button_box">
           <button type="button" class="button_slide_prev button_world_prev" aria-label="prev">
             <span class="sp prev_ico"></span>
           </button>
@@ -206,14 +238,18 @@
           <button type="button" class="button_slide_next button_world_next" aria-label="next">
             <span class="sp next_ico"></span>
           </button>
-        </div>
+        </div> -->
       </div>
     </section>
     <section class="section section_story" data-anchor="story">
       <div class="section_banner">
-        <img src="images/pc_story_002.jpg" alt="" class="img">
+        <img src="images/pc_story_002.jpg" alt="" class="img only_pc">
+        <img src="images/ta_story_002.jpg" alt="" class="img only_tablet">
+        <img src="images/mo_story_002.jpg" alt="" class="img only_mo">
         <div class="img_effect">
-          <img src="images/pc_story_001.jpg" alt="" class="img">
+          <img src="images/pc_story_001.jpg" alt="" class="img only_pc">
+          <img src="images/ta_story_001.jpg" alt="" class="img only_tablet">
+          <img src="images/mo_story_001.jpg" alt="" class="img only_mo">
         </div>
       </div>
       <div class="map_deco">
@@ -230,7 +266,7 @@
       </div>
       <div class="section_content">
         <h2 class="story_title" style="--delay:4.5s">Story</h2>
-        <p class="story_sub_title" style="--delay:4.5s">The stories of the five noble houses of aetheria and the royal
+        <p class="story_sub_title" style="--delay:4.5s">The stories of the five noble houses<br class="only_mo">of aetheria and the royal
           family</p>
         <div class="swiper story_slide">
           <div class="swiper-wrapper">
@@ -255,6 +291,15 @@
               </a>
             </div>
           </div>
+          <div class="swiper_button_area only_mo">
+            <button type="button" class="button_slide_prev button_story_prev" aria-label="prev">
+              <span class="sp prev_ico"></span>
+            </button>
+            <div class="pagination_story pagination_swiper"></div>
+            <button type="button" class="button_slide_next button_story_next" aria-label="next">
+              <span class="sp next_ico"></span>
+            </button>
+          </div>
         </div>
       </div>
     </section>
@@ -262,21 +307,29 @@
       <div class="section_banner swiper combat_slide_banner">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            <img src="images/ta_combat_001.jpg" alt="" class="img">
+            <img src="images/pc_combat_001.jpg" alt="" class="img only_pc">
+            <img src="images/ta_combat_001.jpg" alt="" class="img only_tablet">
+            <img src="images/mo_combat_001.jpg" alt="" class="img only_mo">
           </div>
           <div class="swiper-slide">
-            <img src="images/pc_combat_002.png" alt="" class="img">
+            <img src="images/pc_combat_002.png" alt="" class="img only_pc">
+            <img src="images/ta_combat_002.jpg" alt="" class="img only_tablet">
+            <img src="images/mo_combat_002.jpg" alt="" class="img only_mo">
           </div>
           <div class="swiper-slide">
-            <img src="images/pc_combat_003.jpg" alt="" class="img">
+            <img src="images/pc_combat_003.jpg" alt="" class="img only_pc">
+            <img src="images/ta_combat_003.jpg" alt="" class="img only_tablet">
+            <img src="images/mo_combat_003.jpg" alt="" class="img only_mo">
           </div>
         </div>
       </div>
       <div class="section_content">
         <h2 class="combat_title">
-          <img class="img" src="images/pc_combat_014.png" alt="">
+          <img class="img only_pc" src="images/pc_combat_014.png" alt="">
+          <img src="images/ta_combat_014.png" alt="" class="img only_tablet">
+          <p class="only_mo">Combat</p>
         </h2>
-        <p class="combat_subtitle">Experience the implementation of non-conventional combats firsthand</p>
+        <p class="combat_subtitle">Experience the implementation of<br class="only_mo">non-conventional combats firsthand</p>
         <div class="swiper combat_slide_thumbs">
           <div class="swiper-wrapper">
             <div class="swiper-slide" style="--delay:.75s">
@@ -334,6 +387,15 @@
               </div>
             </div>
           </div>
+          <div class="swiper_button_area only_mo">
+            <button type="button" class="button_slide_prev button_combat_prev" aria-label="prev">
+              <span class="sp prev_ico"></span>
+            </button>
+            <div class="pagination_combat pagination_swiper"></div>
+            <button type="button" class="button_slide_next button_combat_next" aria-label="next">
+              <span class="sp next_ico"></span>
+            </button>
+          </div>
         </div>
       </div>
       <!-- Popup -->
@@ -342,7 +404,11 @@
           <span class="sp ico_btn_close"></span>
         </button>
         <div class="combat_popup_item" id="combat_first">
-          <div class="box_video">
+          <div class="combat_popup_bg only_devices">
+            <img src="images/ta_combat_021.jpg" alt="" class="img only_tablet">
+            <img src="images/mo_combat_010.jpg" alt="" class="img only_mo">
+          </div>
+          <div class="box_video only_pc">
             <video loop playsinline muted class="video">
               <source type="video/mp4" src="https://bellatores.gcdn.ntruss.com/video/combat_001.mp4">
             </video>
@@ -368,7 +434,11 @@
           </div>
         </div>
         <div class="combat_popup_item" id="combat_second">
-          <div class="box_video">
+          <div class="combat_popup_bg only_devices">
+            <img src="images/ta_combat_022.jpg" alt="" class="img only_tablet">
+            <img src="images/mo_combat_011.jpg" alt="" class="img only_mo">
+          </div>
+          <div class="box_video only_pc">
             <video loop playsinline muted class="video">
               <source type="video/mp4" src="https://bellatores.gcdn.ntruss.com/video/combat_002.mp4">
             </video>
@@ -391,8 +461,12 @@
           </div>
         </div>
         <div class="combat_popup_item" id="combat_third">
-          <div class="box_video">
-            <video loop playsinline muted class="video">
+          <div class="combat_popup_bg only_devices">
+            <img src="images/ta_combat_023.jpg" alt="" class="img only_tablet">
+            <img src="images/mo_combat_012.jpg" alt="" class="img only_mo">
+          </div>
+          <div class="box_video only_pc">
+            <video loop playsinline muted class="video ">
               <source type="video/mp4" src="https://bellatores.gcdn.ntruss.com/video/combat_003.mp4">
             </video>
           </div>
@@ -452,9 +526,12 @@
       </div>
       <div class="media_head">
         <h2 class="media_title" style="--delay:0.5s">
-          <img src="images/pc_media_001.png" alt="" class="img">
+          <img src="images/pc_media_001.png" alt="" class="img only_pc">
+          <img src="images/ta_media_001.png" alt="" class="img only_tablet">
+          <img src="images/mo_media_001.png" alt="" class="img only_mo">
+
         </h2>
-        <p class="media_subtitle" style="--delay:0.6s">Experience the World of Bellatores before its official release.
+        <p class="media_subtitle" style="--delay:0.6s">Experience the World of Bellatores<br class="only_mo">before its official release.
         </p>
       </div>
       <div class="media_slide_box">
@@ -480,12 +557,23 @@
                 <img src="images/pc_media_005.jpg" alt="" class="img">
               </div>
             </div>
+            <div class="swiper-slide">
+              <div class="media_item">
+                <img src="images/pc_media_002.jpg" alt="" class="img">
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="media_item">
+                <img src="images/pc_media_003.jpg" alt="" class="img">
+              </div>
+            </div>
           </div>
+          <div class="pagination_media only_devices"></div>
         </div>
-        <button type="button" class="button_slide_prev button_media_prev" aria-label="prev">
+        <button type="button" class="button_slide_prev button_media_prev only_pc" aria-label="prev">
           <span class="sp prev_ico"></span>
         </button>
-        <button type="button" class="button_slide_next button_media_next" aria-label="next">
+        <button type="button" class="button_slide_next button_media_next only_pc" aria-label="next">
           <span class="sp next_ico"></span>
         </button>
       </div>

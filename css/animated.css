@@ -11,7 +11,7 @@
 .section_world_view.active .world_slide_thumbs .swiper-slide-thumb-active .world_title {
   animation: fadeInLeft 1s 0.5s both;
 }
-.section_world_view.active .world_slide_thumbs .swiper-slide-thumb-active .world_des .text {
+.section_world_view.active .world_slide_thumbs .swiper-slide-thumb-active .world_desc .text {
   animation: fadeInUp 1.2s var(--delay) both;
 }
 
