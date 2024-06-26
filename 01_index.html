@@ -15,7 +15,7 @@
   <!-- [D] Header -->
   <header class="header">
     <h1 class="logo">
-      <a href="#none" title="" class="logo_link">
+      <a href="#intro" title="" class="logo_link">
         <i class="logo_img sp">
           <span class="blind">BELLATORES</span>
         </i>
@@ -24,19 +24,19 @@
     <nav class="menu">
       <ul class="menu_list">
         <li class="menu_item">
-          <a href="#main" title="Main" class="menu_link is_active">Main</a>
+          <a href="#main" title="Main" data-menuanchor="main" class="menu_link active">Main</a>
         </li>
         <li class="menu_item">
-          <a href="#world_view" title="World View" class="menu_link">World View</a>
+          <a href="#world_view" title="World View" data-menuanchor="world_view" class="menu_link">World View</a>
         </li>
         <li class="menu_item">
-          <a href="#story" title="Story" class="menu_link">Story</a>
+          <a href="#story" title="Story" data-menuanchor="story" class="menu_link">Story</a>
         </li>
         <li class="menu_item">
-          <a href="#combat" title="Combat" class="menu_link">Combat</a>
+          <a href="#combat" title="Combat" data-menuanchor="combat" class="menu_link">Combat</a>
         </li>
         <li class="menu_item">
-          <a href="#media" title="Media" class="menu_link">Media</a>
+          <a href="#media" title="Media" data-menuanchor="media" class="menu_link">Media</a>
         </li>
       </ul>
     </nav>
@@ -90,11 +90,26 @@
 
   <!-- [D] Content -->
   <div id="fullpage">
+    <section class="section section_intro" data-anchor="intro">
+      <div class="section_banner">
+        <video class="video" data-ignore="" autoplay="" muted="" preload="auto">
+          <source type="video/mp4" src="https://bellatores.gcdn.ntruss.com/video/intro_pc_001.mp4">
+        </video>
+      </div>
+      <div class="intro_content">
+        <h2 class="intro_title">
+          <img src="images/pc_kv_002.png" alt="" class="img">
+        </h2>
+      </div>
+      <button type="button" class="btn_skip" aria-label="Skip">
+        <span class="sp ico_skip"></span>
+      </button>
+    </section>
     <section class="section section_main" data-anchor="main">
       <div class="section_banner">
         <video class="video above_tablet" playsinline muted data-autoplay preload="auto" loop
           src="https://bellatores.gcdn.ntruss.com/video/kv_pc_001.mp4"></video>
-          <video class="video under_tablet" playsinline muted data-autoplay preload="auto" loop
+        <video class="video under_tablet" playsinline muted data-autoplay preload="auto" loop
           src="https://bellatores.gcdn.ntruss.com/video/kv_mo_001.mp4"></video>
       </div>
       <div class="main_content">
@@ -230,7 +245,7 @@
             </div>
           </div>
         </div>
-        <!-- <div class="swiper_button_box">
+        <div class="swiper_button_box">
           <button type="button" class="button_slide_prev button_world_prev" aria-label="prev">
             <span class="sp prev_ico"></span>
           </button>
@@ -238,7 +253,7 @@
           <button type="button" class="button_slide_next button_world_next" aria-label="next">
             <span class="sp next_ico"></span>
           </button>
-        </div> -->
+        </div>
       </div>
     </section>
     <section class="section section_story" data-anchor="story">
@@ -266,7 +281,8 @@
       </div>
       <div class="section_content">
         <h2 class="story_title" style="--delay:4.5s">Story</h2>
-        <p class="story_sub_title" style="--delay:4.5s">The stories of the five noble houses<br class="only_mo">of aetheria and the royal
+        <p class="story_sub_title" style="--delay:4.5s">The stories of the five noble houses<br class="only_mo">of
+          aetheria and the royal
           family</p>
         <div class="swiper story_slide">
           <div class="swiper-wrapper">
@@ -329,7 +345,8 @@
           <img src="images/ta_combat_014.png" alt="" class="img only_tablet">
           <p class="only_mo">Combat</p>
         </h2>
-        <p class="combat_subtitle">Experience the implementation of<br class="only_mo">non-conventional combats firsthand</p>
+        <p class="combat_subtitle">Experience the implementation of<br class="only_mo">non-conventional combats
+          firsthand</p>
         <div class="swiper combat_slide_thumbs">
           <div class="swiper-wrapper">
             <div class="swiper-slide" style="--delay:.75s">
@@ -531,7 +548,8 @@
           <img src="images/mo_media_001.png" alt="" class="img only_mo">
 
         </h2>
-        <p class="media_subtitle" style="--delay:0.6s">Experience the World of Bellatores<br class="only_mo">before its official release.
+        <p class="media_subtitle" style="--delay:0.6s">Experience the World of Bellatores<br class="only_mo">before its
+          official release.
         </p>
       </div>
       <div class="media_slide_box">
@@ -555,16 +573,6 @@
             <div class="swiper-slide">
               <div class="media_item">
                 <img src="images/pc_media_005.jpg" alt="" class="img">
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="media_item">
-                <img src="images/pc_media_002.jpg" alt="" class="img">
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="media_item">
-                <img src="images/pc_media_003.jpg" alt="" class="img">
               </div>
             </div>
           </div>
@@ -620,8 +628,8 @@
               <span class="tel">Tel : 02-597-2537</span>
               <span class="fax">Fax : 02-597-2538</span>
             </li>
-            <li class="contact_item">14, Seochojungang-ro, Seocho-gu, Seoul, Republic of Korea <span
-                class="copyright">&copy; NYOU All rights reserved.</span></li>
+            <li class="contact_item">14, Seochojungang-ro, Seocho-gu,<br class="only_mo"> Seoul, Republic of Korea<br
+                class="only_mo"><span class="copyright">&copy; NYOU All rights reserved.</span></li>
           </ul>
         </div>
       </div>
@@ -635,28 +643,52 @@
       <div class="section_banner swiper house_slide_banner">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            <img class="img" src="images/pc_house_001.jpg" alt="">
-            <img src="images/ta_house_016.png" alt="" class="img_character">
+            <img class="img only_pc" src="images/pc_house_001.jpg" alt="">
+            <img class="img only_tablet" src="images/ta_house_001.jpg" alt="">
+            <img class="img only_mo" src="images/mo_house_001.jpg" alt="">
+            <img src="images/pc_house_016.png" alt="" class="img_character only_pc">
+            <img src="images/ta_house_016.png" alt="" class="img_character only_tablet">
+            <img src="images/mo_house_016.png" alt="" class="img_character only_mo">
           </div>
           <div class="swiper-slide">
-            <img class="img" src="images/ta_house_002.jpg" alt="">
-            <img src="images/pc_house_017.png" alt="" class="img_character">
+            <img class="img only_pc" src="images/pc_house_002.jpg" alt="">
+            <img class="img only_tablet" src="images/ta_house_002.jpg" alt="">
+            <img class="img only_mo" src="images/mo_house_002.jpg" alt="">
+            <img src="images/pc_house_017.png" alt="" class="img_character only_pc">
+            <img src="images/ta_house_017.png" alt="" class="img_character only_tablet">
+            <img src="images/mo_house_017.png" alt="" class="img_character only_mo">
           </div>
           <div class="swiper-slide">
-            <img class="img" src="images/pc_house_003.jpg" alt="">
-            <img src="images/pc_house_018.png" alt="" class="img_character">
+            <img class="img only_pc" src="images/pc_house_003.jpg" alt="">
+            <img class="img only_tablet" src="images/ta_house_003.jpg" alt="">
+            <img class="img only_mo" src="images/mo_house_003.jpg" alt="">
+            <img src="images/pc_house_018.png" alt="" class="img_character only_pc">
+            <img src="images/ta_house_018.png" alt="" class="img_character only_tablet">
+            <img src="images/mo_house_018.png" alt="" class="img_character only_mo">
           </div>
           <div class="swiper-slide">
-            <img class="img" src="images/pc_house_004.jpg" alt="">
-            <img src="images/ta_house_019.png" alt="" class="img_character">
+            <img class="img only_pc" src="images/pc_house_004.jpg" alt="">
+            <img class="img only_tablet" src="images/ta_house_004.jpg" alt="">
+            <img class="img only_mo" src="images/mo_house_004.jpg" alt="">
+            <img src="images/pc_house_019.png" alt="" class="img_character only_pc">
+            <img src="images/ta_house_019.png" alt="" class="img_character only_tablet">
+            <img src="images/mo_house_019.png" alt="" class="img_character only_mo">
           </div>
           <div class="swiper-slide">
-            <img class="img" src="images/pc_house_005.jpg" alt="">
-            <img src="images/pc_house_020.png" alt="" class="img_character">
+            <img class="img only_pc" src="images/pc_house_005.jpg" alt="">
+            <img class="img only_tablet" src="images/ta_house_005.jpg" alt="">
+            <img class="img only_mo" src="images/mo_house_005.jpg" alt="">
+            <img src="images/pc_house_020.png" alt="" class="img_character only_pc">
+            <img src="images/ta_house_020.png" alt="" class="img_character only_tablet">
+            <img src="images/mo_house_020.png" alt="" class="img_character only_mo">
           </div>
           <div class="swiper-slide">
-            <img class="img" src="images/pc_house_006.jpg" alt="">
-            <img src="images/pc_house_021.png" alt="" class="img_character">
+            <img class="img only_pc" src="images/pc_house_006.jpg" alt="">
+            <img class="img only_tablet" src="images/ta_house_006.jpg" alt="">
+            <img class="img only_mo" src="images/mo_house_006.jpg" alt="">
+            <img src="images/pc_house_021.png" alt="" class="img_character only_pc">
+            <img src="images/ta_house_021.png" alt="" class="img_character only_tablet">
+            <img src="images/mo_house_021.png" alt="" class="img_character only_mo">
           </div>
         </div>
       </div>
@@ -666,7 +698,9 @@
             <div class="swiper-slide">
               <p class="house_subtitle">House</p>
               <h2 class="house_title">
-                <img src="images/pc_house_022.png" alt="" class="img">
+                <img src="images/pc_house_022.png" alt="" class="img only_pc">
+                <img src="images/ta_house_022.png" alt="" class="img only_tablet">
+                <img src="images/mo_house_022.png" alt="" class="img only_mo">
               </h2>
               <button type="button" class="btn_story js_show_popup" data-id="popup_story" data-popup="grendal"
                 aria-label="Read story">
@@ -676,7 +710,9 @@
             <div class="swiper-slide">
               <p class="house_subtitle">House</p>
               <h2 class="house_title">
-                <img src="images/pc_house_023.png" alt="" class="img">
+                <img src="images/pc_house_023.png" alt="" class="img only_pc">
+                <img src="images/ta_house_023.png" alt="" class="img only_tablet">
+                <img src="images/mo_house_023.png" alt="" class="img only_mo">
               </h2>
               <button type="button" class="btn_story js_show_popup" data-id="popup_story" data-popup="guntfell"
                 aria-label="Read story">
@@ -686,7 +722,9 @@
             <div class="swiper-slide">
               <p class="house_subtitle">House</p>
               <h2 class="house_title">
-                <img src="images/pc_house_024.png" alt="" class="img">
+                <img src="images/pc_house_024.png" alt="" class="img only_pc">
+                <img src="images/ta_house_024.png" alt="" class="img only_tablet">
+                <img src="images/mo_house_024.png" alt="" class="img only_mo">
               </h2>
               <button type="button" class="btn_story js_show_popup" data-id="popup_story" data-popup="erhard"
                 aria-label="Read story">
@@ -696,7 +734,9 @@
             <div class="swiper-slide">
               <p class="house_subtitle">House</p>
               <h2 class="house_title">
-                <img src="images/pc_house_025.png" alt="" class="img">
+                <img src="images/pc_house_025.png" alt="" class="img only_pc">
+                <img src="images/ta_house_025.png" alt="" class="img only_tablet">
+                <img src="images/mo_house_025.png" alt="" class="img only_mo">
               </h2>
               <button type="button" class="btn_story js_show_popup" data-id="popup_story" data-popup="collin"
                 aria-label="Read story">
@@ -706,7 +746,9 @@
             <div class="swiper-slide">
               <p class="house_subtitle">House</p>
               <h2 class="house_title">
-                <img src="images/pc_house_026.png" alt="" class="img">
+                <img src="images/pc_house_026.png" alt="" class="img only_pc">
+                <img src="images/ta_house_026.png" alt="" class="img only_tablet">
+                <img src="images/mo_house_026.png" alt="" class="img only_mo">
               </h2>
               <button type="button" class="btn_story js_show_popup" data-id="popup_story" data-popup="aindal"
                 aria-label="Read story">
@@ -716,7 +758,9 @@
             <div class="swiper-slide">
               <p class="house_subtitle">House of<br>Royal Family</p>
               <h2 class="house_title">
-                <img src="images/pc_house_027.png" alt="" class="img">
+                <img src="images/pc_house_027.png" alt="" class="img only_pc">
+                <img src="images/ta_house_027.png" alt="" class="img only_tablet">
+                <img src="images/mo_house_027.png" alt="" class="img only_mo">
               </h2>
               <button type="button" class="btn_story js_show_popup" data-id="popup_story" data-popup="aerius"
                 aria-label="Read story">
@@ -726,7 +770,39 @@
           </div>
         </div>
         <div class="pagination_house"></div>
+        <div class="pagination_box only_mo">
+          <div class="swiper slide_pagination_house ">
+            <div class="swiper-wrapper">
+              <button type="button" class="swiper-slide">
+                <span class="ico_pagination ico_grendal"></span>
+              </button>
+              <button type="button" class="swiper-slide">
+                <span class="ico_pagination ico_guntfell"></span>
+              </button>
+              <button type="button" class="swiper-slide">
+                <span class="ico_pagination ico_erhard"></span>
+              </button>
+              <button type="button" class="swiper-slide">
+                <span class="ico_pagination ico_collin"></span>
+              </button>
+              <button type="button" class="swiper-slide">
+                <span class="ico_pagination ico_aindal"></span>
+              </button>
+              <button type="button" class="swiper-slide">
+                <span class="ico_pagination ico_aerius"></span>
+              </button>
+            </div>
+          </div>
+          <button type="button" class="button_pagination_prev" aria-label="prev">
+            <span class="sp_mo ico_prev"></span>
+          </button>
+          <button type="button" class="button_pagination_next" aria-label="next">
+            <span class="sp_mo ico_next"></span>
+          </button>
+        </div>
+
       </div>
+
       <!-- Popup -->
       <div class="house_popup section_popup" id="popup_story">
         <button type="button" class="btn_close_popup" aria-label="close">
@@ -736,7 +812,7 @@
           <div class="house_popup_content">
             <div class="house_popup_head">
               <h2 class="house_popup_title">Grendal</h2>
-              <p class="house_popup_subtitle">Behold the starlight shining eternally in its glory</p>
+              <p class="house_popup_subtitle">Behold the starlight shining<br class="only_mo"> eternally in its glory</p>
             </div>
             <div class="house_popup_box">
               <p class="text" style="--delay:0.9s">
@@ -758,7 +834,7 @@
           <div class="house_popup_content">
             <div class="house_popup_head">
               <h2 class="house_popup_title">Guntfell</h2>
-              <p class="house_popup_subtitle">Unwavering loyalty and honor, like that of a steadfast fortress</p>
+              <p class="house_popup_subtitle">Unwavering loyalty and honor,<br class="only_mo"> like that of a steadfast fortress</p>
             </div>
             <div class="house_popup_box">
               <p class="text" style="--delay:0.9s">
@@ -802,7 +878,7 @@
           <div class="house_popup_content">
             <div class="house_popup_head">
               <h2 class="house_popup_title">Collin</h2>
-              <p class="house_popup_subtitle">The hoofs of justice that echo throughout the battlefield</p>
+              <p class="house_popup_subtitle">The hoofs of justice that echo<br class="only_mo">throughout the battlefield</p>
             </div>
             <div class="house_popup_box">
               <p class="text" style="--delay:0.9s">
@@ -824,7 +900,7 @@
           <div class="house_popup_content">
             <div class="house_popup_head">
               <h2 class="house_popup_title">Aindal</h2>
-              <p class="house_popup_subtitle">We will pioneer battlefields tougher than the sea</p>
+              <p class="house_popup_subtitle">We will pioneer battlefields<br class="only_mo"> tougher than the sea</p>
             </div>
             <div class="house_popup_box">
               <p class="text" style="--delay:0.9s">
@@ -846,7 +922,7 @@
           <div class="house_popup_content">
             <div class="house_popup_head">
               <h2 class="house_popup_title">Aerius</h2>
-              <p class="house_popup_subtitle">The royal family that had become a glory of the past due to its downfall.
+              <p class="house_popup_subtitle">The royal family that had become <br class="only_mo"> a glory of the past due to its downfall.
               </p>
             </div>
             <div class="house_popup_box">

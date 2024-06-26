@@ -83,17 +83,21 @@
   animation: fadeInUp 1s var(--delay) both;
 }
 
-.section_house.active .house_slide_thumbs .swiper-slide-thumb-active .house_subtitle {
+.section_house.active .house_slide_thumbs .swiper-slide-active .house_subtitle {
   animation: fadeInLeft 1s 0.25s both;
 }
-.section_house.active .house_slide_thumbs .swiper-slide-thumb-active .house_title {
+.section_house.active .house_slide_thumbs .swiper-slide-active .house_title {
   animation: fadeInLeft 1s 0.5s both;
 }
-.section_house.active .house_slide_thumbs .swiper-slide-thumb-active .btn_story {
+.section_house.active .house_slide_thumbs .swiper-slide-active .btn_story {
   animation: fadeInLeft 1s 0.75s both;
 }
 .section_house.active .house_slide_banner .swiper-slide-active .img_character {
   animation: fadeInRight 1s 1s cubic-bezier(0.5, 0.48, 0.16, 0.96) both;
+}
+
+.section_intro.active .intro_title {
+  animation: fadeInOut 6s 2s ease forwards;
 }
 
 @keyframes fadeInDown {
@@ -197,6 +201,17 @@
   }
   100% {
     transform: scaleX(1) scaleY(1);
+  }
+}
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
 * {
@@ -441,41 +456,63 @@ a {
 
 .swiper_button_box {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   position: absolute;
   bottom: -71px;
   left: calc(18vw + 30px);
+  z-index: 1;
+  width: auto;
   margin-left: -17px;
 }
+.swiper_button_box .button_world_prev,
+.swiper_button_box .button_world_next {
+  top: unset !important;
+  width: 36px;
+  height: 36px;
+}
 
-.pagination_world_view {
-  position: relative;
-  width: -moz-fit-content !important;
-  width: fit-content !important;
-}
-.pagination_world_view::before {
-  position: absolute;
-  top: 43%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 85%;
-  height: 1px;
-  background: rgba(191, 162, 138, 0.3);
-  content: "";
-}
 .pagination_world_view .swiper-pagination-bullet {
-  width: 20px;
-  height: 20px;
-  margin: 0 25px !important;
-  transform: rotate(45deg);
-  background: #0c0d0f;
-  border: 1px solid #a39674;
+  position: relative;
+  top: unset !important;
+  width: 80px;
+  height: 48px;
+  margin: 0 !important;
+  padding: 11px;
   border-radius: 0;
+  font-size: 0;
+  background: transparent;
   opacity: 1;
 }
-.pagination_world_view .swiper-pagination-bullet-active {
-  background: #a39674;
+.pagination_world_view .swiper-pagination-bullet::before, .pagination_world_view .swiper-pagination-bullet::after {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 28px;
+  height: 1px;
+  background-color: rgba(191, 162, 138, 0.3);
+  content: "";
+}
+.pagination_world_view .swiper-pagination-bullet:first-child::before {
+  display: none;
+}
+.pagination_world_view .swiper-pagination-bullet:last-child::after {
+  display: none;
+}
+.pagination_world_view .swiper-pagination-bullet::before {
+  left: 0;
+}
+.pagination_world_view .swiper-pagination-bullet::after {
+  right: 0;
+}
+.pagination_world_view .swiper-pagination-bullet .ico_pagination {
+  width: 25px;
+  height: 25px;
+  background-position: -451px -215px;
+}
+.pagination_world_view .swiper-pagination-bullet-active .ico_pagination {
+  width: 26px;
+  height: 25px;
+  background-position: -421px -215px;
 }
 
 .prev_ico {
@@ -1058,7 +1095,7 @@ a {
 .house_slide_thumbs .swiper-slide {
   opacity: 0 !important;
 }
-.house_slide_thumbs .swiper-slide-thumb-active {
+.house_slide_thumbs .swiper-slide-active {
   opacity: 1 !important;
   z-index: 1;
 }
@@ -1439,6 +1476,51 @@ a {
   margin: 0 auto;
 }
 
+.intro_content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.intro_title {
+  width: 38.333vw;
+  max-width: 878px;
+  opacity: 0;
+}
+.intro_title .img {
+  width: 100%;
+}
+
+.btn_skip {
+  position: absolute;
+  bottom: 42px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0;
+  z-index: 2;
+  cursor: pointer;
+}
+.btn_skip .ico_skip {
+  background-position: -288px -246px;
+  width: 82px;
+  height: 28px;
+}
+
+.section_intro .section_banner::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/pc_intro_001.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 1;
+  content: "";
+}
+
 @media (min-width: 721px) and (max-width: 1024px) {
   .only_tablet {
     display: block;
@@ -1450,6 +1532,9 @@ a {
   }
 }
 @media (min-width: 1025px) {
+  .media_slide_thumbs {
+    overflow: hidden;
+  }
   .menu {
     margin-left: 48px;
   }
@@ -1468,7 +1553,7 @@ a {
     text-transform: uppercase;
     color: #909090;
   }
-  .menu_list .menu_item .menu_link.is_active {
+  .menu_list .menu_item .menu_link.active {
     color: #ceb98e;
   }
   .pc_hidden {
@@ -1494,18 +1579,6 @@ a {
 @media (max-width: 1366px) {
   .world_view_content {
     padding-left: 22vw;
-  }
-  .world_view_content .world_subtitle {
-    font-size: 22px;
-    letter-spacing: 0.5em;
-  }
-  .world_view_content .world_desc {
-    font-size: 16.5px;
-    letter-spacing: 0.33px;
-  }
-  .pagination_world_view .swiper-pagination-bullet {
-    width: 18px;
-    height: 18px;
   }
   .swiper_button_box {
     left: 22vw;
@@ -1580,7 +1653,7 @@ a {
     text-transform: uppercase;
     transition: 0.2s;
   }
-  .menu_list .menu_item .menu_link.is_active {
+  .menu_list .menu_item .menu_link.active {
     color: #ceb98e;
   }
   .social_list {
@@ -1668,6 +1741,9 @@ a {
     width: 46px;
     height: 23px;
   }
+  .js_toggle_menu.is_hidden {
+    display: none;
+  }
   .section_main .main_desc {
     right: 50%;
     bottom: 49px;
@@ -1693,8 +1769,19 @@ a {
     transform: translateX(-50%);
   }
   .pagination_world_view .swiper-pagination-bullet {
-    width: 13px;
-    height: 13px;
+    width: 57px;
+    height: 40px;
+  }
+  .pagination_world_view .swiper-pagination-bullet .ico_pagination {
+    width: 19px;
+    height: 18px;
+    background-position: -464px -152px;
+  }
+  .pagination_world_view .swiper-pagination-bullet::before, .pagination_world_view .swiper-pagination-bullet::after {
+    width: 20px;
+  }
+  .pagination_world_view .swiper-pagination-bullet-active .ico_pagination {
+    background-position: -112px -278px;
   }
   .button_slide_prev .sp {
     width: 25px;
@@ -1784,6 +1871,49 @@ a {
   }
   .media_popup {
     padding: 0;
+  }
+  .house_content .house_subtitle {
+    font-size: 21.5px;
+    letter-spacing: 0.5em;
+  }
+  .house_content .btn_story .ico_read_story {
+    width: 172px;
+    height: 27px;
+    background-position: -288px -152px;
+  }
+  .pagination_house .swiper-pagination-bullet span {
+    width: 44px;
+    height: 44px;
+  }
+  .pagination_house .swiper-pagination-bullet-active span {
+    width: 61px;
+    height: 61px;
+  }
+  .house_content {
+    padding-left: 23.14%;
+  }
+  .pagination_house {
+    bottom: -95px !important;
+    left: 23.14vw !important;
+  }
+  .house_slide_banner .img_character {
+    left: 38.6%;
+    height: 100vh;
+  }
+  .house_popup_content .house_popup_head .house_popup_title {
+    font-size: 52px;
+  }
+  .house_popup_content .house_popup_head .house_popup_subtitle {
+    margin-top: 10px;
+    font-size: 16px;
+  }
+  .house_popup_content .house_popup_box {
+    margin-top: 32px;
+  }
+  .house_popup_content .house_popup_box .text {
+    font-size: 16px;
+    line-height: 1.38;
+    letter-spacing: 0.32px;
   }
 }
 @media (max-width: 720px) {
@@ -1918,7 +2048,8 @@ a {
   }
   .swiper_button_box {
     bottom: -43px;
-    width: 100%;
+    width: -moz-fit-content;
+    width: fit-content;
   }
   .story_title {
     font-size: 10.83vw;
@@ -1967,7 +2098,7 @@ a {
   }
   .pagination_swiper .swiper-pagination-bullet:not(:first-child)::before {
     position: absolute;
-    top: 47%;
+    top: 46%;
     left: -22px;
     transform: translateY(-50%);
     width: 33px;
@@ -2069,7 +2200,8 @@ a {
     line-height: 1.25;
     letter-spacing: 0.066vw;
   }
-  .media_slide_box .button_slide_prev, .media_slide_box .button_slide_next {
+  .media_slide_box .button_slide_prev,
+  .media_slide_box .button_slide_next {
     display: none;
   }
   .media_title img {
@@ -2089,7 +2221,8 @@ a {
   .pagination_media .swiper-scrollbar-drag {
     height: 1px;
   }
-  .slide_media_popup::before, .slide_media_popup::after {
+  .slide_media_popup::before,
+  .slide_media_popup::after {
     display: none;
   }
   .slide_media_popup {
@@ -2102,5 +2235,257 @@ a {
   }
   .media_popup.is_show {
     background: rgba(0, 0, 0, 0.8);
+  }
+  .btn_close_popup {
+    top: 15px;
+    right: 14px;
+  }
+  .btn_close_popup .ico_btn_close {
+    width: 26.5px;
+    height: 27px;
+    background-image: url(../images/ico_close_mo.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: 0;
+  }
+  .footer {
+    padding: 9.166vw 0;
+  }
+  .footer_bottom {
+    margin-top: 6.666vw;
+    padding-top: 6.666vw;
+  }
+  .footer_bottom .contact_list .contact_item:not(:last-child) {
+    margin-left: 0;
+  }
+  .footer_logo_ico {
+    width: 82px;
+    height: 22px;
+    background-position: -165px -212px;
+  }
+  .pagination_world_view .swiper-pagination-bullet {
+    width: 36px;
+  }
+  .pagination_world_view .swiper-pagination-bullet .ico_pagination {
+    width: 12px;
+    height: 12px;
+    background-position: -464px -129px;
+  }
+  .pagination_world_view .swiper-pagination-bullet::before, .pagination_world_view .swiper-pagination-bullet::after {
+    width: 13px;
+  }
+  .pagination_world_view .swiper-pagination-bullet-active .ico_pagination {
+    width: 11px;
+    height: 11px;
+    background-position: -473px -77px;
+  }
+  .swiper_button_box .button_world_prev,
+  .swiper_button_box .button_world_next {
+    position: absolute;
+    top: 50% !important;
+  }
+  .house_slide_banner .img_character {
+    bottom: 9.92%;
+    left: 7.36%;
+    height: 76.48%;
+  }
+  .pagination_house {
+    display: none;
+  }
+  .house_content {
+    top: initial;
+    bottom: 4.86vw;
+    padding-bottom: 26.25vw;
+    padding-left: 27px;
+    transform: translateY(0);
+  }
+  .house_content .house_subtitle {
+    font-size: 3.33vw;
+  }
+  .house_content .house_title {
+    margin-top: 8px;
+  }
+  .house_content .house_title .img {
+    height: 8.47vw;
+  }
+  .house_content .btn_story .ico_read_story {
+    width: 35.27vw;
+    height: 3.88vw;
+    background-image: url(../images/ico_read_story_mo.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: 0;
+  }
+  .pagination_box {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 219px;
+    transform: translateX(-50%);
+  }
+  .pagination_box .swiper {
+    overflow: hidden;
+  }
+  .pagination_box .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    font-size: 0;
+    transform: translate3d(0, 0, 0);
+  }
+  .pagination_box .ico_pagination {
+    display: block;
+    position: relative;
+    width: 41.5px;
+    height: 41.5px;
+    background-size: 100% 100%;
+    background-position: 0;
+    transition: 0.5s;
+  }
+  .pagination_box .ico_pagination::before {
+    display: none;
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    width: 23px;
+    height: 1px;
+    background: #fff;
+    transform: translateY(-50%);
+    opacity: 0.2;
+    content: "";
+  }
+  .pagination_box .ico_grendal {
+    background-image: url(../images/ico_grendal.png);
+  }
+  .pagination_box .ico_guntfell {
+    background-image: url(../images/ico_guntfell.png);
+  }
+  .pagination_box .ico_erhard {
+    background-image: url(../images/ico_erhard.png);
+  }
+  .pagination_box .ico_collin {
+    background-image: url(../images/ico_collin.png);
+  }
+  .pagination_box .ico_aindal {
+    background-image: url(../images/ico_aindal.png);
+  }
+  .pagination_box .ico_aerius {
+    background-image: url(../images/ico_aerius.png);
+  }
+  .pagination_box .swiper-slide-active .ico_pagination {
+    width: 60px;
+    height: 59.5px;
+  }
+  .pagination_box .swiper-slide-active .ico_pagination::before {
+    display: block;
+  }
+  .pagination_box .swiper-slide-active + .swiper-slide .ico_pagination::before {
+    display: block;
+  }
+  .pagination_box .swiper-slide-active .ico_grendal {
+    background-image: url(../images/ico_grendal_active.png);
+  }
+  .pagination_box .swiper-slide-active .ico_guntfell {
+    background-image: url(../images/ico_guntfell_active.png);
+  }
+  .pagination_box .swiper-slide-active .ico_erhard {
+    background-image: url(../images/ico_erhard_active.png);
+  }
+  .pagination_box .swiper-slide-active .ico_collin {
+    background-image: url(../images/ico_collin_active.png);
+  }
+  .pagination_box .swiper-slide-active .ico_aindal {
+    background-image: url(../images/ico_aindal_active.png);
+  }
+  .pagination_box .swiper-slide-active .ico_aerius {
+    background-image: url(../images/ico_aerius_active.png);
+  }
+  .game_item:hover .btn_view .ico_rotate {
+    background-position: 0;
+  }
+  .button_pagination_prev {
+    position: absolute;
+    top: 50%;
+    left: -50px;
+    transform: translateY(-50%);
+    z-index: 1;
+    width: 44px;
+    height: 44px;
+  }
+  .button_pagination_prev .ico_prev {
+    width: 25px;
+    height: 22px;
+    background-position: 0px 0px;
+  }
+  .button_pagination_next {
+    position: absolute;
+    top: 50%;
+    right: -50px;
+    transform: translateY(-50%);
+    z-index: 1;
+    width: 44px;
+    height: 44px;
+  }
+  .button_pagination_next .ico_next {
+    width: 25px;
+    height: 22px;
+    background-position: -29px 0px;
+  }
+  .house_popup_content::before {
+    left: 0;
+    width: 120px;
+    height: 170px;
+  }
+  .house_popup_content {
+    top: initial;
+    right: inherit;
+    bottom: 13.61vw;
+    left: initial;
+    padding-right: 7.63vw;
+    padding-left: 7.63vw;
+    transform: translate(0);
+    text-align: left;
+  }
+  .house_popup_content .house_popup_head .house_popup_title {
+    font-size: 10.55vw;
+  }
+  .house_popup_content .house_popup_head .house_popup_subtitle {
+    margin-top: 1.11vw;
+    font-size: 3.33vw;
+  }
+  .house_popup_content .house_popup_box .text {
+    font-size: 3.33vw;
+    line-height: 1.25;
+  }
+  .house_popup_item#grendal {
+    background-image: url(../images/mo_house_007.jpg) !important;
+  }
+  .house_popup_item#guntfell {
+    background-image: url(../images/mo_house_008.jpg) !important;
+  }
+  .house_popup_item#erhard {
+    background-image: url(../images/mo_house_009.jpg) !important;
+  }
+  .house_popup_item#collin {
+    background-image: url(../images/mo_house_010.jpg) !important;
+  }
+  .house_popup_item#aindal {
+    background-image: url(../images/mo_house_011.jpg) !important;
+  }
+  .house_popup_item#aerius {
+    background-image: url(../images/mo_house_012.jpg) !important;
+  }
+  .section_house .btn_back {
+    top: 15px;
+    left: 15px;
+  }
+  .section_house .btn_back .ico_back {
+    width: 35px;
+    height: 24.5px;
+    background-image: url(../images/ico_back.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: 0;
   }
 }

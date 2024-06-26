@@ -59,17 +59,21 @@
   animation: fadeInUp 1s var(--delay) both;
 }
 
-.section_house.active .house_slide_thumbs .swiper-slide-thumb-active .house_subtitle {
+.section_house.active .house_slide_thumbs .swiper-slide-active .house_subtitle {
   animation: fadeInLeft 1s 0.25s both;
 }
-.section_house.active .house_slide_thumbs .swiper-slide-thumb-active .house_title {
+.section_house.active .house_slide_thumbs .swiper-slide-active .house_title {
   animation: fadeInLeft 1s 0.5s both;
 }
-.section_house.active .house_slide_thumbs .swiper-slide-thumb-active .btn_story {
+.section_house.active .house_slide_thumbs .swiper-slide-active .btn_story {
   animation: fadeInLeft 1s 0.75s both;
 }
 .section_house.active .house_slide_banner .swiper-slide-active .img_character {
   animation: fadeInRight 1s 1s cubic-bezier(0.5, 0.48, 0.16, 0.96) both;
+}
+
+.section_intro.active .intro_title {
+  animation: fadeInOut 6s 2s ease forwards;
 }
 
 @keyframes fadeInDown {
@@ -173,5 +177,16 @@
   }
   100% {
     transform: scaleX(1) scaleY(1);
+  }
+}
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
