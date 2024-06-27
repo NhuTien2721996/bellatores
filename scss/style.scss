@@ -996,13 +996,20 @@ a {
   }
 }
 .btn_close_popup {
+  visibility: hidden;
   position: absolute;
   top: 30px;
   right: 30px;
   z-index: 2;
   padding: 10px;
   font-size: 0;
+  opacity: 0;
+  transition:all .3s;
   cursor: pointer;
+  &.is_show{
+    visibility: visible;
+    opacity: 1;
+  }
   .ico_btn_close {
     background-position: -232px -63px;
     @include set_size(39px, 39px);
@@ -1014,9 +1021,10 @@ a {
   left: 0;
   z-index: 3;
   @include size_full;
-  transform: scale(0);
+  transform: scaleY(0);
+  transition: all .75s;
   &.is_show {
-    animation: scaleIn 0.75s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    transform: scaleY(1);
   }
 }
 .combat_popup_item {
@@ -1781,7 +1789,7 @@ a {
       &:not(:first-child) {
         &::before {
           position: absolute;
-          top: 46%;
+          top: 45%;
           left: -22px;
           transform: translateY(-50%);
           width: 33px;
@@ -2010,7 +2018,6 @@ a {
       justify-content: center;
       height: auto;
       font-size: 0;
-      transform: translate3d(0, 0, 0);
     }
     .ico_pagination{
       display: block;
@@ -2020,17 +2027,22 @@ a {
       background-size: 100% 100%;
       background-position: 0;
       transition: .5s;
-      &::before{
+      &::before,&::after{
         display: none;
         position: absolute;
         top: 50%;
-        right: 100%;
         width: 23px;
         height: 1px;
         background: #fff;
         transform: translateY(-50%);
         opacity: .2;
         content: "";
+      }
+      &::before{
+        right: 100%;
+      }
+      &::after{
+        left: 100%;
       }
     }
     .ico_grendal{
@@ -2054,17 +2066,11 @@ a {
     .swiper-slide-active{
       .ico_pagination{
         @include set_size(60px,59.5px);
-        &::before{
+        &::before,&::after{
           display: block;
         }
       }
-      & + .swiper-slide{
-        .ico_pagination{
-          &::before{
-            display: block;
-          }
-        }
-      }
+     
       .ico_grendal{
         background-image: url(../images/ico_grendal_active.png);
       }
@@ -2170,5 +2176,8 @@ a {
       @include bg_full(url(../images/ico_back.png));
       background-position: 0;
     }
+  }
+  .slide_pagination_house{
+    height: 59.5px;
   }
 }

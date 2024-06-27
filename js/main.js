@@ -1,3 +1,4 @@
+"use strict";
 var SCRIPT_MAIN = (function () {
   var initFullPage = function () {
     if ($("#fullpage").length > 0) {
@@ -42,6 +43,36 @@ var SCRIPT_MAIN = (function () {
               elm.classList.add("is_show");
             }
           });
+          switch (destination.index) {
+            case 2:
+              resetSlides(".world_slide_thumbs", ".world_slide_banner");
+              break;
+            case 3:
+              resetSlides(".story_slide");
+              break;
+            case 4:
+              resetSlides(".combat_slide_thumbs", ".combat_slide_banner");
+              break;
+            case 5:
+              if (direction === 'down') {
+                resetSlides(".media_slide_thumbs", ".media_slide_banner", ".slide_media_popup");
+              }
+              break;
+            case 7:
+              resetSlides(".house_slide_thumbs", ".house_slide_banner", {selector: ".slide_pagination_house", slideIndex: 2});
+              break;
+            default:
+              break;
+          }
+          function resetSlides(...selectors) {
+            selectors.forEach(item => {
+              if (typeof item === 'string') {
+                $(item)[0].swiper.slideTo(0);
+              } else if (typeof item === 'object') {
+                $(item.selector)[0].swiper.slideTo(item.slideIndex);
+              }
+            });
+          }
         },
         afterLoad: function (origin, destination, direction, trigger) {
           const header = document.querySelector(".header");
@@ -79,7 +110,7 @@ var SCRIPT_MAIN = (function () {
 
     const videoIntro = document.querySelector(".section_intro .video");
     if (videoIntro) {
-      videoIntro.onended = function () {
+        videoIntro.onended = function () {
         fullpage_api.moveSectionDown();
       };
     }
@@ -120,6 +151,11 @@ var SCRIPT_MAIN = (function () {
         $(".control_page").addClass("is_show");
       }
     });
+    slideMedia();
+    slideWorldView();
+    slideCombat();
+    slideStory();
+    slideHouse();
   };
   var slideWorldView = function () {
     if (typeof document.querySelector(".world_slide_thumbs") === "undefined")
@@ -197,13 +233,6 @@ var SCRIPT_MAIN = (function () {
       spaceBetween: 21,
       watchSlidesProgress: true,
 
-      pagination: {
-        el: ".pagination_combat",
-        clickable: true,
-        renderBullet: function (index, className) {
-          return `<button class="${className}"><i class="sp ico_pagination"></i></button>`;
-        },
-      },
       breakpoints: {
         721: {
           slidesPerView: 3,
@@ -221,6 +250,13 @@ var SCRIPT_MAIN = (function () {
       watchSlidesProgress: true,
       effect: "fade",
       allowTouchMove: false,
+      pagination: {
+        el: ".pagination_combat",
+        clickable: true,
+        renderBullet: function (index, className) {
+          return `<button class="${className}"><i class="sp ico_pagination"></i></button>`;
+        },
+      },
       navigation: {
         nextEl: ".button_combat_next",
         prevEl: ".button_combat_prev",
@@ -323,6 +359,7 @@ var SCRIPT_MAIN = (function () {
       watchSlidesProgress: true,
       effect: "fade",
       allowTouchMove: false,
+      loop: true,
       navigation: {
         nextEl: ".button_pagination_next",
         prevEl: ".button_pagination_prev",
@@ -357,7 +394,6 @@ var SCRIPT_MAIN = (function () {
       watchSlidesProgress: true,
       allowTouchMove: false,
       loop: true,
-      slideToClickedSlide: true,
       navigation: {
         nextEl: ".button_pagination_next",
         prevEl: ".button_pagination_prev",
@@ -374,14 +410,18 @@ var SCRIPT_MAIN = (function () {
       btnOpen.click(function () {
         var id = $(this).attr("data-id");
         var idItem = $(this).attr("data-popup");
+        var btn = $("#" + id).find('.btn_close_popup');
+        btn.addClass('is_show');
         $("#" + id).addClass("is_show");
         $("#" + idItem).addClass("is_show");
+
         var video = $("#" + idItem).find(".video")[0];
         if (video) {
           video.play();
         }
       });
       btnClose.click(function () {
+        $(this).removeClass("is_show");
         $(this).parent().removeClass("is_show");
         $(this).siblings().removeClass("is_show");
         var videos = $(this).siblings().find(".video");
@@ -396,7 +436,7 @@ var SCRIPT_MAIN = (function () {
     var btnShow = $(".js_toggle_menu");
     var btnClose = $(".btn_close_menu");
     var overlay = $(".over-lay");
-    var menuItem = $('.menu_link');
+    var menuItem = $(".menu_link");
     var handleMenuToggle = function () {
       $(".header, .over-lay").toggleClass("is_open");
     };
@@ -405,14 +445,10 @@ var SCRIPT_MAIN = (function () {
     overlay.click(handleMenuToggle);
     menuItem.click(handleMenuToggle);
   };
+
   return {
     _: function () {
       initFullPage();
-      slideWorldView();
-      slideStory();
-      slideCombat();
-      slideMedia();
-      slideHouse();
       onShowPopup();
       toggleMenu();
     },

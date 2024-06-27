@@ -1316,13 +1316,20 @@ a {
 }
 
 .btn_close_popup {
+  visibility: hidden;
   position: absolute;
   top: 30px;
   right: 30px;
   z-index: 2;
   padding: 10px;
   font-size: 0;
+  opacity: 0;
+  transition: all 0.3s;
   cursor: pointer;
+}
+.btn_close_popup.is_show {
+  visibility: visible;
+  opacity: 1;
 }
 .btn_close_popup .ico_btn_close {
   background-position: -232px -63px;
@@ -1337,10 +1344,11 @@ a {
   z-index: 3;
   width: 100%;
   height: 100%;
-  transform: scale(0);
+  transform: scaleY(0);
+  transition: all 0.75s;
 }
 .combat_popup.is_show {
-  animation: scaleIn 0.75s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+  transform: scaleY(1);
 }
 
 .combat_popup_item {
@@ -2098,7 +2106,7 @@ a {
   }
   .pagination_swiper .swiper-pagination-bullet:not(:first-child)::before {
     position: absolute;
-    top: 46%;
+    top: 45%;
     left: -22px;
     transform: translateY(-50%);
     width: 33px;
@@ -2332,7 +2340,6 @@ a {
     justify-content: center;
     height: auto;
     font-size: 0;
-    transform: translate3d(0, 0, 0);
   }
   .pagination_box .ico_pagination {
     display: block;
@@ -2343,17 +2350,22 @@ a {
     background-position: 0;
     transition: 0.5s;
   }
-  .pagination_box .ico_pagination::before {
+  .pagination_box .ico_pagination::before, .pagination_box .ico_pagination::after {
     display: none;
     position: absolute;
     top: 50%;
-    right: 100%;
     width: 23px;
     height: 1px;
     background: #fff;
     transform: translateY(-50%);
     opacity: 0.2;
     content: "";
+  }
+  .pagination_box .ico_pagination::before {
+    right: 100%;
+  }
+  .pagination_box .ico_pagination::after {
+    left: 100%;
   }
   .pagination_box .ico_grendal {
     background-image: url(../images/ico_grendal.png);
@@ -2377,10 +2389,7 @@ a {
     width: 60px;
     height: 59.5px;
   }
-  .pagination_box .swiper-slide-active .ico_pagination::before {
-    display: block;
-  }
-  .pagination_box .swiper-slide-active + .swiper-slide .ico_pagination::before {
+  .pagination_box .swiper-slide-active .ico_pagination::before, .pagination_box .swiper-slide-active .ico_pagination::after {
     display: block;
   }
   .pagination_box .swiper-slide-active .ico_grendal {
@@ -2487,5 +2496,8 @@ a {
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-position: 0;
+  }
+  .slide_pagination_house {
+    height: 59.5px;
   }
 }
