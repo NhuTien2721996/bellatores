@@ -1031,8 +1031,8 @@ a {
   visibility: hidden;
   opacity: 0;
   transition:
-    visibility 0.4s ease-in-out,
-    opacity 0.4s ease-in-out;
+  visibility 0.4s ease-in-out,
+  opacity 0.4s ease-in-out;
   @include ab_full;
   &.is_show {
     visibility: visible;
